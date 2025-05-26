@@ -4,7 +4,7 @@ RUN dnf update -y && \
     dnf install -y rpmdevtools rpmlint make golang && \
     useradd -m pkgbuild
     
-COPY --chmod=0755 ./dockerfiles/entrypoint.sh /usr/local/bin/entrypoint
+COPY --chmod=0755 ./entrypoint.sh /usr/local/bin/entrypoint
 
 USER pkgbuild
 WORKDIR /home/pkgbuild
