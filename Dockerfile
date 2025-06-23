@@ -16,4 +16,5 @@ VOLUME /home/pkgbuild/code
 VOLUME /home/pkgbuild/rpmbuild
 
 USER root
+
 ENTRYPOINT [ "/usr/local/bin/entrypoint" ]
