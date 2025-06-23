@@ -7,5 +7,7 @@ chown -R pkgbuild:pkgbuild /home/pkgbuild/rpmbuild/RPMS
 chown -R pkgbuild:pkgbuild /home/pkgbuild/rpmbuild/SRPMS
 chown -R pkgbuild:pkgbuild /home/pkgbuild/code
 
+echo $COPR_SECRET > /home/pkgbuild/.config/copr
+chown -R pkgbuild:pkgbuild /home/pkgbuild/.config
 
 sudo -u pkgbuild -- "$@"

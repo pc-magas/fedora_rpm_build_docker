@@ -1,5 +1,7 @@
 FROM fedora:41
 
+ENV COPR_SECRET=""
+
 RUN dnf update -y && \
     dnf install -y rpmdevtools rpmlint make golang copr-cli sudo && \
     useradd -m pkgbuild &&\
@@ -11,10 +13,14 @@ USER pkgbuild
 WORKDIR /home/pkgbuild
 
 RUN mkdir code &&\
+    mkdir -p /home/pkgbuild/.config &&\
     rpmdev-setuptree
 
 VOLUME /home/pkgbuild/code
-VOLUME /home/pkgbuild/rpmbuild
+VOLUME /home/pkgbuild/rpmbuild/SOURCES
+VOLUME /home/pkgbuild/rpmbuild/SPECS
+VOLUME /home/pkgbuild/rpmbuild/SRPMS
+VOLUME /home/pkgbuild/rpmbuild/RPMS
 
 USER root
 
