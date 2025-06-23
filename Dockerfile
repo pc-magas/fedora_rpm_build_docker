@@ -1,8 +1,9 @@
 FROM fedora:41
 
 RUN dnf update -y && \
-    dnf install -y rpmdevtools rpmlint make golang && \
-    useradd -m pkgbuild
+    dnf install -y rpmdevtools rpmlint make golang copr-cli sudo && \
+    useradd -m pkgbuild &&\
+    dnf clean all
     
 COPY --chmod=0755 ./entrypoint.sh /usr/local/bin/entrypoint
 
@@ -18,3 +19,4 @@ VOLUME /home/pkgbuild/rpmbuild
 USER root
 
 ENTRYPOINT [ "/usr/local/bin/entrypoint" ]
+CMD ["/bin/bash"]

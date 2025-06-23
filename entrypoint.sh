@@ -8,4 +8,4 @@ chown -R pkgbuild:pkgbuild /home/pkgbuild/rpmbuild/SRPMS
 chown -R pkgbuild:pkgbuild /home/pkgbuild/code
 
 
-su pkgbuild -c "$*"
+sudo -u pkgbuild -- "$@"
