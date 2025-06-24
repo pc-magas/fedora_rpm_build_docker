@@ -21,6 +21,7 @@ VOLUME /home/pkgbuild/rpmbuild/SOURCES
 VOLUME /home/pkgbuild/rpmbuild/SPECS
 VOLUME /home/pkgbuild/rpmbuild/SRPMS
 VOLUME /home/pkgbuild/rpmbuild/RPMS
+VOLUME /home/pkgbuild/.config
 
 USER root
 
