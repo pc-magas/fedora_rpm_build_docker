@@ -1,7 +1,5 @@
 FROM fedora:41
 
-ENV COPR_SECRET=""
-
 RUN dnf update -y && \
     dnf install -y rpmdevtools rpmlint make golang copr-cli sudo && \
     useradd -m pkgbuild &&\
